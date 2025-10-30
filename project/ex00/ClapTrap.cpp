@@ -10,17 +10,17 @@ ClapTrap::ClapTrap(const std::string& name) : name(name), hitPoints(10), energyP
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other) : name(other.name), hitPoints(other.hitPoints), energyPoints(other.energyPoints), attackDamage(other.attackDamage) {
-    std::cout << "ClapTrap copy constructor called" << std::endl;
+    std::cout << "ClapTrap copy constructor called for " << name << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
-    std::cout << "ClapTrap copy assignment operator called" << std::endl;
     if (this != &other) {
         name = other.name;
         hitPoints = other.hitPoints;
         energyPoints = other.energyPoints;
         attackDamage = other.attackDamage;
     }
+    std::cout << "ClapTrap copy assignment operator called for " << name << std::endl;
     return *this;
 }
 
@@ -30,18 +30,18 @@ ClapTrap::~ClapTrap() {
 
 void ClapTrap::attack(const std::string& target) {
     if (hitPoints <= 0) {
-        std::cout << "ClapTrap " << name << " can't attack because has no hit points left" << std::endl;
+        std::cout << "ClapTrap " << name << " can't attack because it has no hit points left" << std::endl;
         return;
     }
 
     if (energyPoints <= 0) {
-        std::cout << "ClapTrap " << name << " can't attack because has no energy points left" << std::endl;
+        std::cout << "ClapTrap " << name << " can't attack because it has no energy points left" << std::endl;
         return;
     }
 
     std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage" << std::endl;
     energyPoints--;
-    std::cout << "ClapTrap " << name << " now has " << energyPoints << " energy points left" << std::endl;
+    std::cout << "ClapTrap " << name << " now it has " << energyPoints << " energy points left" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
@@ -54,12 +54,12 @@ void ClapTrap::takeDamage(unsigned int amount) {
     hitPoints -= damageTaken;
 
     std::cout << "ClapTrap " << name << " takes " << damageTaken << " damage" << std::endl;
-    std::cout << "ClapTrap " << name << " now has " << hitPoints << " hit points left" << std::endl;
+    std::cout << "ClapTrap " << name << " now it has " << hitPoints << " hit points left" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
     if (energyPoints <= 0) {
-        std::cout << "ClapTrap " << name << " can't repair itself because has no energy points left" << std::endl;
+        std::cout << "ClapTrap " << name << " can't repair itself because it has no energy points left" << std::endl;
         return;
     }
 
