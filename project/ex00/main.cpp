@@ -1,7 +1,7 @@
 #include "ClapTrap.hpp"
 
 int main() {
-    ClapTrap claptrap("TrapClap");
+    ClapTrap claptrap("Alpha");
 
     claptrap.attack("?");
     claptrap.takeDamage(9);
