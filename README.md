@@ -10,7 +10,7 @@ This document contains the exercises of Module 03 from C++ modules.
 ## [Exercise 00: Aaaaand... OPEN!](https://github.com/3ka1tz/cpp03/tree/main/project/ex00)
 
 Turn-in directory: ex00/
-Files to turn in: Makefile, main.cpp, ClapTrap.{h, hpp}, ClapTrap.cpp
+Files to turn in: `Makefile, main.cpp, ClapTrap.{h, hpp}, ClapTrap.cpp`
 Forbidden functions: None
 
 First, you have to implement a class! How original!
@@ -29,8 +29,32 @@ Add the following public member functions so that the ClapTrap behaves more real
 When ClapTrap attacks, it causes its target to lose `<attack damage>` hit points. When ClapTrap repairs itself, it regains `<amount>` hit points. Attacking and repairing each cost 1 energy point. Of course, ClapTrap can’t do anything if it has no hit points or energy points left. However, since these exercises serve as an introduction, the ClapTrap instances should not interact directly with one another, and the parameters will not refer to another instance of ClapTrap.
 
 In all of these member functions, you need to print a message to describe what happens. For example, the `attack()` function may display something like (of course, without the angle brackets):
+
 `ClapTrap <name> attacks <target>, causing <damage> points of damage!`
 
 The constructors and destructor must also display a message, so your peer-evaluators can easily see that they have been called.
 
 Implement and turn in your own tests to ensure your code works as expected.
+
+## [Exercise 01: Serena, my love!](https://github.com/3ka1tz/cpp03/tree/main/project/ex01)
+
+Turn-in directory: ex01/
+Files to turn in: `Files from the previous exercise + ScavTrap.{h, hpp}, ScavTrap.cpp`
+Forbidden functions: None
+
+Because you can never have enough ClapTraps, you will now create a derived robot. It will be named **ScavTrap** and will inherit the constructors and destructor from ClapTrap. However, its constructors, destructor, and `attack()` will print different messages. After all, ClapTraps are aware of their individuality.
+
+Note that proper construction/destruction chaining must be shown in your tests. When a ScavTrap is created, the program starts by constructing a ClapTrap. Destruction occurs in reverse order. Why?
+
+**ScavTrap** will use the attributes of ClapTrap (update ClapTrap accordingly) and must initialize them to:
+- Name, which is passed as a parameter to the constructor
+- Hit points (100), representing the health of the ClapTrap
+- Energy points (50)
+- Attack damage (20)
+ScavTrap will also have its own special ability:
+
+`void guardGate();`
+
+This member function will display a message indicating that ScavTrap is now in Gate keeper mode.
+
+Don’t forget to add more tests to your program.
