@@ -1,5 +1,5 @@
 # C++ - Module 03
-Inheritance
+**Inheritance**
 
 **Summary:**
 This document contains the exercises of Module 03 from C++ modules.
